@@ -28,14 +28,16 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="">
-          <div className="h-15 bg-amber-400">
+          <div className="h-15 bg-amber-400 fixed w-full">
             navbar
           </div>
-          <div className="flex ">
-            <div className="w-15 h-[100vh] calc bg-purple-300">
+          <div className="flex  ">
+            <div className="w-40 h-[100vh] pt-15 calc bg-purple-300">
               sidebar
             </div>
-            {children}
+           <div className="p-5 pt-20">
+              {children}
+           </div>
           </div>
          
         </div>
