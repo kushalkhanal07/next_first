@@ -27,19 +27,20 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="">
-          <div className="h-15 bg-amber-400 fixed w-full">
-            navbar
-          </div>
-          <div className="flex  ">
-            <div className="w-40 h-[100vh] pt-15 calc bg-purple-300">
-              sidebar
-            </div>
-           <div className="p-5 pt-20">
+        <div className="h-screen flex flex-col ">
+          {/* Fixed navbar */}
+          <div className="h-14 bg-gray-300 shrink-0">navbar</div>
+
+          {/* Main content area */}
+          <div className="flex flex-1 overflow-hidden">
+            {/* Sidebar */}
+            <div className="w-60 bg-purple-200">sidebar</div>
+
+            {/* Scrollable content */}
+            <div className="flex-1 overflow-hidden overflow-y-auto p-5 custom-scrollbar webkit-">
               {children}
-           </div>
+            </div>
           </div>
-         
         </div>
       </body>
     </html>
