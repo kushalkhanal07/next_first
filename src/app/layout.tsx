@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Sidebar from "./sidebar/page";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,17 +28,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="h-screen flex flex-col ">
+        <div className="h-screen flex flex-col overflow-hidden">
           {/* Fixed navbar */}
           <div className="h-14 bg-gray-300 shrink-0">navbar</div>
 
           {/* Main content area */}
           <div className="flex flex-1 overflow-hidden">
             {/* Sidebar */}
-            <div className="w-60 bg-purple-200">sidebar</div>
+            <Sidebar />
 
             {/* Scrollable content */}
-            <div className="flex-1 overflow-hidden overflow-y-auto p-5 custom-scrollbar webkit-">
+            <div className="flex-1 overflow-hidden overflow-y-auto p-5 custom-scrollbar ml-0 md:ml-60 transform transition-all duration-500">
               {children}
             </div>
           </div>
